@@ -30,12 +30,12 @@ with sync_playwright() as playwright:
 
 with open('teamOffensiveRating.csv' , 'w') as file:
     file.write('Team,')
-    file.write('offensiveRating,\n')
+    file.write('offensiveRating\n')
 
 
     for i in range(len(team)):
         file.write(team[i] + ',')
-        file.write(offensiveRating[i] + ",\n")
+        file.write(offensiveRating[i] + "\n")
 
     
 

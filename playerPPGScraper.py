@@ -49,14 +49,14 @@ with open('playerStatistics.csv' , 'w') as file:
     file.write('Team,')
     file.write('ppg,')
     file.write('gp,')
-    file.write('fgPercentage,\n')
+    file.write('fgPercentage\n')
 
     for i in range(len(player)):
         file.write(player[i] + ",")
         file.write(team[i] + ",")
         file.write(ppg[i] + ",")
         file.write(gp[i] + ",")
-        file.write(fgPercantage[i] + ",\n")
+        file.write(fgPercantage[i] + "\n")
 
 
 
