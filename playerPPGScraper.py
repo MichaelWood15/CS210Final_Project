@@ -45,7 +45,7 @@ with sync_playwright() as playwright:
 
 
 with open('playerStatistics.csv' , 'w') as file:
-    file.write('Player,\n')
+    file.write('Player,')
     file.write('Team,')
     file.write('ppg,')
     file.write('gp,')
@@ -62,11 +62,6 @@ with open('playerStatistics.csv' , 'w') as file:
 
 
     
-
-
-    for i in range(len(team)):
-        file.write(team[i] + ',')
-        file.write(offensiveRating[i] + ",\n")
 
     
         
