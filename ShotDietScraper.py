@@ -57,7 +57,7 @@ with open('shotDietByTeam.csv' , 'w') as out:
     for shot in shotTypes:
         out.write(shot + ' made,')  
         out.write(shot + ' attempted,')
-        out.write(shot + ' percentage')  
+        out.write(shot + ' percentage,')  
     out.write('\n')
 
     for team in shotDiet:
@@ -69,5 +69,5 @@ with open('shotDietByTeam.csv' , 'w') as out:
 
     
     
-# added comment
+# added
 
