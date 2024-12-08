@@ -49,7 +49,7 @@ with sync_playwright() as playwright:
 
 
 
-with open('shotDietByTeam.csv', 'w') as out:
+with open('shotDietByTeamNew.csv', 'w') as out:
     # Write columns
     out.write('Team,')
     for i, shot in enumerate(shotTypes):
