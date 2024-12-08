@@ -51,7 +51,7 @@ with sync_playwright() as playwright:
 
 with open('shotDietByTeam.csv', 'w') as out:
     # Write columns
-    out.write(',')
+    out.write('Team,')
     for i, shot in enumerate(shotTypes):
         out.write(shot + ' made,')  
         out.write(shot + ' attempted,')

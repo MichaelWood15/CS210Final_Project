@@ -8,6 +8,7 @@ with open ('CSVs/shotDietByTeam.csv' , 'r') as shotDiet, open ('CSVs/teamOffensi
         switchone = False
         switchtwo = False
         for i in range(31):
+            print(i)
             if switchone:
                 line1 = shotDiet.readline()
                 
