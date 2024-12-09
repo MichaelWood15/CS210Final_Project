@@ -1,8 +1,11 @@
 import sqlite3
 
-# create connection w/ sqlite3
+# create connection w/ sqlite3 and our DB
+
 con = sqlite3.connect("NBAOFFENSE.db")
 cur = con.cursor()
+
+#Create the table for NBA player stats if it does not exist already
 
 cur.execute('''
     CREATE TABLE if NOT EXISTS NBAPLAYERS(
@@ -35,7 +38,7 @@ with open('CSVs/playerStatistics.csv' , 'r') as playerStats:
             INSERT INTO NBAPLAYERS (playerName, Team, ppg, gp, fgPercentage)
             VALUES (?, ?, ?, ?, ?)''', 
             (name, team, ppg, gp, fgPercentage))
-            con.commit()  # Commit the transaction to the database
+            con.commit()  
 
 
         line = playerStats.readline()
