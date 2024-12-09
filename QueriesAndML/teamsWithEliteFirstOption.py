@@ -16,17 +16,6 @@ import sqlite3
 con = sqlite3.connect("NBAOFFENSE.db")
 cur = con.cursor()
 
-# Query to list all tables
-cur.execute("SELECT name FROM sqlite_master WHERE type='table';")
-
-# Fetch all table names
-tables = cur.fetchall()
-
-# Print the table names
-print("Tables in the database:")
-for table in tables:
-    print(table[0])
-
 # We want every teams offensive rating, and best player
 
 playerQuery = '''

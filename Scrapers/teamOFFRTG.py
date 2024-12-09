@@ -1,35 +1,4 @@
-team_dict = {
-    'TOR': 'Toronto Raptors',
-    'DAL': 'Dallas Mavericks',
-    'LAL': 'Los Angeles Lakers',
-    'NOP': 'New Orleans Pelicans',
-    'POR': 'Portland Trail Blazers',
-    'CLE': 'Cleveland Cavaliers',
-    'ORL': 'Orlando Magic',
-    'HOU': 'Houston Rockets',
-    'BOS': 'Boston Celtics',
-    'MEM': 'Memphis Grizzlies',
-    'UTA': 'Utah Jazz',
-    'DEN': 'Denver Nuggets',
-    'NYK': 'New York Knicks',
-    'SAC': 'Sacramento Kings',
-    'BKN': 'Brooklyn Nets',
-    'MIN': 'Minnesota Timberwolves',
-    'ATL': 'Atlanta Hawks',
-    'GSW': 'Golden State Warriors',
-    'OKC': 'Oklahoma City Thunder',
-    'CHA': 'Charlotte Hornets',
-    'LAC': 'LA Clippers',
-    'MIL': 'Milwaukee Bucks',
-    'SAS': 'San Antonio Spurs',
-    'MIA': 'Miami Heat',
-    'CHI': 'Chicago Bulls',
-    'PHX': 'Phoenix Suns',
-    'IND': 'Indiana Pacers',
-    'DET': 'Detroit Pistons',
-    'WAS': 'Washington Wizards',
-    'PHI': 'Philadelphia 76ers'
-}
+
 
 from playwright.sync_api import sync_playwright
 url = "https://www.nba.com/stats/teams/advanced?Season=2023-24"
@@ -67,7 +36,7 @@ with open('teamOffensiveRating.csv' , 'w') as file:
 
 
     for i in range(len(team)):
-        file.write(team_dict[team[i]] + ',')
+        file.write(team[i] + ',')
         file.write(offensiveRating[i] + "\n")
 
     

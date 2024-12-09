@@ -1,13 +1,11 @@
 with open('CSVs/playerStatistics.csv' , 'r') as playerStats:
-    count = 0
+
     line = playerStats.readline()
     switch = False
     while line is not None and len(line) > 2:
         if not switch:
             switch = True
         else:
-            print(count)
-            count+= 1
             line = line.split(",")
             name = line[0]
             team = line[1]
