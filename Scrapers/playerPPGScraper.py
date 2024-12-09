@@ -1,3 +1,5 @@
+# This is done because team is the foreign key connecting the NBATEAMS and NBAPLAYERS DB's
+
 team_dict = {
     'TOR': 'Toronto Raptors',
     'DAL': 'Dallas Mavericks',
@@ -93,9 +95,7 @@ with open('playerStatistics.csv' , 'w') as file:
         file.write(fgPercantage[i] + "\n")
 
 
-teamSet = set(team.copy())
-for element in teamSet:
-    print(element)
+
 
 
 
