@@ -11,6 +11,7 @@ use the player that averaged the most ppg AND shot over 43% from the field
 
 
 """
+from Kmeans import kmeans
 import sqlite3
 
 con = sqlite3.connect("NBAOFFENSE.db")
@@ -59,8 +60,22 @@ for row in teamORT:
     team, ORT = row
     Team[team].append(ORT)
 
+#for element in Team:
+    #print(element , Team[element])
+
+datapoints = []
 for element in Team:
-    print(element , Team[element])
+    datapoints.append(Team[element])
+
+# print(datapoints)
+for i in range(3,10):
+    ML = kmeans(i , datapoints)
+
+    clusters = ML[0]
+    loss = ML[1]
+
+    print(loss)
+
 
 con.close()
 
