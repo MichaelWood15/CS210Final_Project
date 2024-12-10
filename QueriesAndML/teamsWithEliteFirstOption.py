@@ -87,6 +87,7 @@ for i in range(3,10):
             graphColors.append(colors[j])
 
     plt.scatter(x , y, c=graphColors)
+    plt.title("Correlation between a teams offense and best player")
     plt.xlabel("Best Player's PPG")
     plt.ylabel("Team Offensive Rating")
     # plt.show()
@@ -95,6 +96,9 @@ for i in range(3,10):
     
 print(loss , range(3,10))
 plt.plot([3,4,5,6,7,8,9] , loss)
+plt.title("Number of Clusters vs Loss")
+plt.xlabel("Number of Clusters")
+plt.ylabel("MSE")
 # plt.show()
 plt.savefig("GRAPHS/lossVsClusterGraph.png",dpi=300,bbox_inches="tight")
 
