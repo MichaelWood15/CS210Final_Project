@@ -13,7 +13,9 @@ use the player that averaged the most ppg AND shot over 43% from the field
 """
 from Kmeans import kmeans
 import sqlite3
+import matplotlib.pyplot as plt
 
+colors = ['red' , 'blue' , 'green' , 'orange' , 'purple' , 'cyan' , 'magenta' , 'brown' , 'pink' , 'yellow']
 con = sqlite3.connect("NBAOFFENSE.db")
 cur = con.cursor()
 
@@ -60,22 +62,41 @@ for row in teamORT:
     team, ORT = row
     Team[team].append(ORT)
 
-#for element in Team:
-    #print(element , Team[element])
-
 datapoints = []
 for element in Team:
     datapoints.append(Team[element])
 
 # print(datapoints)
+loss = []
 for i in range(3,10):
     ML = kmeans(i , datapoints)
 
     clusters = ML[0]
-    loss = ML[1]
+    loss.append(ML[1])
 
-    print(loss)
+    x = []
+    y = []
+    graphColors = []
+    
+    for j in range(len(clusters)):
+        val = clusters[j]
+        for ind in range(1,len(val)):
+            team = val[ind]
+            x.append(team[0][1])
+            y.append(team[1])
+            graphColors.append(colors[j])
 
+    plt.scatter(x , y, c=graphColors)
+    plt.xlabel("Best Player's PPG")
+    plt.ylabel("Team Offensive Rating")
+    # plt.show()
+    plt.savefig("GRAPHS/" + str(i) + " clusters.png", dpi=300, bbox_inches="tight")
+    plt.clf()
+    
+print(loss , range(3,10))
+plt.plot([3,4,5,6,7,8,9] , loss)
+# plt.show()
+plt.savefig("GRAPHS/lossVsClusterGraph.png",dpi=300,bbox_inches="tight")
 
 con.close()
 
