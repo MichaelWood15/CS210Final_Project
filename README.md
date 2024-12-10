@@ -1,5 +1,7 @@
 # CS210 Final Project -> Follow Order of Folders as...
 
+If you have any questions please reach out 
+
 Project Report: in the CS210 Project Report.pdf file
 
 1. webScraping:
