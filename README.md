@@ -1,5 +1,7 @@
 # CS210 Final Project -> Follow Order of Folders as...
 
+Project Report: in the CS210 Project Report.pdf file
+
 1. webScraping:
 
    Scraped the web for NBA Data about team offenses in the 2023-24 season. I gathered statistics on teams Offensive Ratings, the type of shots teams took, and player offensive statistics. data that was scraped was formatted and saved into CSVs
